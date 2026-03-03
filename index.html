@@ -24,24 +24,23 @@
       height: 100%;
       max-width: 800px;
       max-height: 600px;
-      background-color: #111;
+      background-color: #222;
     }
   </style>
 </head>
 <body>
 
-<script>
-  const viewer = document.querySelector("model-viewer");
-
-  viewer.addEventListener("load", () => {
-    if (viewer.availableAnimations.length > 0) {
-      viewer.animationName = viewer.availableAnimations[0];
-      viewer.play();
-    }
-  });
-</script> 
-
+  <model-viewer
+    src="model.glb"
+    alt="3D модель"
+    camera-controls
+    auto-rotate
+    autoplay
+    animation-loop>
+  </model-viewer>
 </body>
 </html>
+
+
 
 
