@@ -30,15 +30,18 @@
 </head>
 <body>
 
-<model-viewer
-  src="model.glb"
-  alt="3D модель"
-  camera-controls
-  auto-rotate
-  autoplay
-  animation-loop>
-</model-viewer>
+<script>
+  const viewer = document.querySelector("model-viewer");
+
+  viewer.addEventListener("load", () => {
+    if (viewer.availableAnimations.length > 0) {
+      viewer.animationName = viewer.availableAnimations[0];
+      viewer.play();
+    }
+  });
+</script> 
 
 </body>
 </html>
+
 
